@@ -8,7 +8,7 @@ entity fsmgcd is
 end fsmgcd;
 
 architecture behavior of fsmgcd is
-type state is (start, input, output, check, check1,updatex,  updatey);
+type state is (start, input, output, check, check1,updatee,  updatef);
 signal current_state, next_state: state;
 begin
 state_register:Process(CLK, RESET)
@@ -20,38 +20,38 @@ BEGIN
 	END IF;
 end process;
 compute:Process(A, B, current_state)
-variable x, y, r, p : integer;
+variable e, f, g, h : integer;
 begin
 	case current_state IS 
 		WHEN start =>
 			next_state <= input;
 		WHEN input =>
-			x:= A;
-			y:= B;
+			e:= A;
+			f:= B;
 			next_state <= check;
 		WHEN check =>
-			if(x< y) THEN
-				next_state <= updatex;
+			if(e< f) THEN
+				next_state <= updatee;
 			else
-				next_state <= updatey;
+				next_state <= updatef;
 			END IF;
 			next_state <= check1;
 		WHEN  check1 =>
-			while y /= 0 loop
-				r:= x mod y;
-				x:= y;
-				y:= r;
+			while f /= 0 loop
+				g:= e mod f;
+				e:= f;
+				f:= g;
 			end loop;
 			next_state <= output;
-		WHEN updatex =>
-			p:=x;
-			x:=y;
-			y:=p;
-		when updatey =>
-			x:=x;
-			y:=y;
+		WHEN updatee =>
+			h:=e;
+			e:=f;
+			f:=h;
+		when updatef =>
+			e:=e;
+			f:=f;
 		WHEN output =>
-			GCD <= 	x;
+			GCD <= 	e;
 			next_state <= start;
 		WHEN others =>
 			next_state <= start;
