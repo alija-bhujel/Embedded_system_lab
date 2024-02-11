@@ -1,14 +1,14 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity mux is
-port(
-    A0,A1,S0:in std_logic;
-    Y:out std_logic
-);
-end mux;
+entity multiplexer is
+    port (
+        Input_0, Input_1, Selector: in std_logic;
+        Output: out std_logic
+    );
+end multiplexer;
 
-architecture mux_arch of mux is
+architecture mux_architecture of multiplexer is
 begin
-    Y <= ((not S0) and A0) or (S0 and A1);
-end mux_arch;
+    Output <= ((not Selector) and Input_0) or (Selector and Input_1);
+end mux_architecture;
