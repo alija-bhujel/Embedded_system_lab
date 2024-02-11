@@ -1,21 +1,21 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 
-ENTITY demux IS
-PORT(
-	A,S2,S1,S0:IN STD_LOGIC;
-	Y7,Y6,Y5,Y4,Y3,Y2,Y1,Y0:OUT STD_LOGIC
-);
-END demux;
+ENTITY demultiplexer IS
+    PORT(
+        Input, Select_2, Select_1, Select_0: IN STD_LOGIC;
+        Output_7, Output_6, Output_5, Output_4, Output_3, Output_2, Output_1, Output_0: OUT STD_LOGIC
+    );
+END demultiplexer;
 
-ARCHITECTURE demux_arch OF demux IS
+ARCHITECTURE demux_architecture OF demultiplexer IS
 BEGIN
-	Y7<=S0 and S1 and S2 and A;
-	Y6<=(not S0) and S1 and S2 and A;
-	Y5<=S0 and (not S1) and S2 and A;
-	Y4<=(not S0) and (not S1) and S2 and A;
-	Y3<=S0 and S1 and (not S1) and A;
-	Y2<=(not S0) and S1 and (not S2) and A;
-	Y1<=S0 and (not S1) and (not S2) and A;
-	Y0<=(not S0) and (not S1) and (not S2) and A;
-END demux_arch;
+    Output_7 <= Select_0 AND Select_1 AND Select_2 AND Input;
+    Output_6 <= (NOT Select_0) AND Select_1 AND Select_2 AND Input;
+    Output_5 <= Select_0 AND (NOT Select_1) AND Select_2 AND Input;
+    Output_4 <= (NOT Select_0) AND (NOT Select_1) AND Select_2 AND Input;
+    Output_3 <= Select_0 AND Select_1 AND (NOT Select_1) AND Input;
+    Output_2 <= (NOT Select_0) AND Select_1 AND (NOT Select_2) AND Input;
+    Output_1 <= Select_0 AND (NOT Select_1) AND (NOT Select_2) AND Input;
+    Output_0 <= (NOT Select_0) AND (NOT Select_1) AND (NOT Select_2) AND Input;
+END demux_architecture;
