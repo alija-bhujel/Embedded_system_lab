@@ -37,7 +37,7 @@ architecture AND_Gate_arch of AND_Gate is
 BEGIN
     Z <= A and B;
 
-end AND_Gate;
+end AND_Gate_arch;
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

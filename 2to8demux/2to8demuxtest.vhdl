@@ -44,6 +44,13 @@ begin
         Select_0_sig <= '0';
         wait for CLK_PERIOD;
 
+        -- Test case 3
+        Input_sig <= '1';
+        Select_2_sig <= '1';
+        Select_1_sig <= '0';
+        Select_0_sig <= '0';
+        wait for CLK_PERIOD;
+
         -- Add more test cases as needed
 
         wait;
