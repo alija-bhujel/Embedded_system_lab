@@ -1,2 +1,2 @@
 # OUTPUT
-![result of seq_det](Sequence Detector.png)
+![result_of_seq_det](Sequence Detector.png)
