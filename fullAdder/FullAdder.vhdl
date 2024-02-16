@@ -45,8 +45,8 @@ END full_adder;
 ARCHITECTURE fa_arch OF full_adder IS
 COMPONENT or_gate IS
 PORT(
-    input_x, input_y : IN STD_LOGIC;
-    output_z : OUT STD_LOGIC
+    input1, input2 : IN STD_LOGIC;
+    output : OUT STD_LOGIC
 );
 END COMPONENT or_gate;
 
@@ -61,8 +61,5 @@ SIGNAL sum1, carry1, carry2 : STD_LOGIC;
 BEGIN
     HA1: half_adder PORT MAP(input_a => input_A, input_b => input_B, sum => sum1, carry => carry1);
     HA2: half_adder PORT MAP(input_a => sum1, input_b => input_Cin, sum => sum, carry => carry2);
-    OR1: or_gate PORT MAP(input_x => carry1, input_y => carry2, output_z => carry_out);
+    OR1: or_gate PORT MAP(input1 => carry1, input2 => carry2, output=> carry_out);
 END fa_arch;
-```
-
-In this modified version, variable names have been changed for clarity and consistency.
