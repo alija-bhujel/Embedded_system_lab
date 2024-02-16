@@ -1,12 +1,10 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.std_logic_arith.all;
-use ieee.std_logic_unsigned.all;
 
-entity testbench is
-end testbench;
+entity tb is
+end tb;
 
-architecture test of testbench is
+architecture test of tb is
     signal j_input, k_input, clk_input, rst_input : std_logic := '0';
     signal q_output, qb_output : std_logic;
 
