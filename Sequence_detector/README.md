@@ -1,2 +1,4 @@
 # OUTPUT
-![result](Sequence Detector.png)
+
+
+<img src="Sequence Detector.png" alt="Output">
