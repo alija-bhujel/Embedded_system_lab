@@ -1,8 +1,8 @@
 all: result.vcd
 
-result.vcd: 2to8demux.vhdl 2to8demuxtest.vhdl
-	ghdl -a -fsynopsys 2to8demux.vhdl
-	ghdl -a -fsynopsys 2to8demuxtest.vhdl
+result.vcd: 1to8demux.vhdl 1to8demuxtest.vhdl
+	ghdl -a -fsynopsys 1to8demux.vhdl
+	ghdl -a -fsynopsys 1to8demuxtest.vhdl
 	ghdl -e -fsynopsys demultiplexer_tb
 	ghdl -r -fsynopsys demultiplexer_tb --vcd=result.vcd
 
