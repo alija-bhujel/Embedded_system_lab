@@ -3,19 +3,19 @@ This repository contains my solutions to various VHDL lab assignments. The code 
 
 ## How to Run
 1.Requiremets 
-a.GHDL
-b.GTK Wave
-c.VS code
-# How to Start
+a.GHDL/n
+b.GTK Wave/n
+c.VS code/n
+## How to Start
 1.Clone the repository
  git clone https://github.com/alija-bhujel/Embedded_system_lab.git
  cd Embedded_system_lab
  Steps to follow:
- Installing GHDL
- Installing GTKWave
- Installing make tools
+ Installing GHDL/n
+ Installing GTKWave/n
+ Installing make tools/n
 
- # After installation
+ ## After installation
  
  * go to specific file of which you want to observe the output in terminal for eg:
 $ cd gcd
