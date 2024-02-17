@@ -1,3 +1,3 @@
-Output of Upcounter
+# Output of Upcounter
 
-![(upCounter.png)]
+![up_counter](upCounter.png)
